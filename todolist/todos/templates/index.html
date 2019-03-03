@@ -1,0 +1,20 @@
+{% include 'partials/header.html' %}
+<table class="table table-striped" style="width: 50%; margin: 0px auto; float: none;">
+    <thead class="thead-dark">
+        <th>#</th>
+        <th>Awesome Todo List</th>
+        <th>Edit Task</th>
+        <th><a href="{% url 'add' %}">Add new task +</a></th>
+    </thead>
+    <tbody>
+        {% for todo in todos %}
+            <tr>
+                <td>{{todo.id}}</td>
+                <td>{{todo.title}}:{{todo.text}}</td>
+                <td><a href="/details/{{todo.id}}">Edit</td>
+                <td></td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% include 'partials/footer.html' %}
